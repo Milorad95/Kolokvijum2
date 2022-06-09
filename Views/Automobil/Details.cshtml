@@ -1,0 +1,30 @@
+﻿@model Kolokvijum2.Models.Automobil
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Automobil</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NazivAutomobila)
+        </dt>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Proizvodjac.NazivProizvodjaca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NazivAutomobila)
+        </dd>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Proizvodjac.NazivProizvodjaca)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.AutomobilID" class="btn btn-primary">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</div>

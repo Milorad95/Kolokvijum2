@@ -1,0 +1,38 @@
+﻿@model Kolokvijum2.Models.Automobil
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Automobil</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AutomobilID" />
+            <div class="form-group">
+                <label asp-for="NazivAutomobila" class="control-label"></label>
+                <input asp-for="NazivAutomobila" class="form-control" />
+                <span asp-validation-for="NazivAutomobila" class="text-danger"></span>
+
+                <label asp-for="Proizvodjac.NazivProizvodjaca" class="control-label"></label>
+                <input asp-for="Proizvodjac.NazivProizvodjaca" class="form-control" />
+                <span asp-validation-for="Proizvodjac.NazivProizvodjaca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
